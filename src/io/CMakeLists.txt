@@ -68,7 +68,7 @@ add_library(libio SHARED ${SRC_libio})
 
 
 target_include_directories(libio PRIVATE
-    "${CORESDK_DIR}/src/core"                             # Para resolver rutas relativas del SDK
+    "${CORESDK_DIR}/src/core"                            
     "${LIBSTRING_DIR}/src/strings/core"  
 ) 
 
@@ -85,9 +85,7 @@ target_compile_definitions(libio PRIVATE
     WIN32 _WINDOWS _USRDLL UNICODE _UNICODE _CRT_SECURE_NO_WARNINGS TARGET_OS_WIN32 WIN32_LEAN_AND_MEAN
 ) 
  
-set(DIR_BIN "${CMAKE_CURRENT_SOURCE_DIR}/../../bin/${DIR_BUILD}")
-
- 
+set(DIR_BIN "${CMAKE_CURRENT_SOURCE_DIR}/../../../bin/${DIR_BUILD}")
 
 set_target_properties(libio PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${DIR_BIN}/$<CONFIG>"
